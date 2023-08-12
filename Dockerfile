@@ -17,4 +17,4 @@ RUN git clone https://github.com/sipcapture/hepgen.js.git && \
 
 WORKDIR /hepgen.js   
 
-CMD for i in `seq 1 ${LOOP:-1}`; do node hepgen.js -s "${HEP_SERVER:-127.0.0.1}" -p "${HEP_PORT:-9060}" -t "${HEP_PROTO:-udpy}" -c "./config/${HEP_CONFIG:-b2bcall_rtcp.js}"; done; sleep ${SLEEP:-1}
+CMD for i in `seq 1 ${LOOP:-1}`; do node hepgen.js -s "${HEP_SERVER:-127.0.0.1}" -p "${HEP_PORT:-9060}" -t "${HEP_PROTO:-udp}" -c "./config/${HEP_CONFIG:-b2bcall_rtcp.js}"; done; sleep ${SLEEP:-1}
